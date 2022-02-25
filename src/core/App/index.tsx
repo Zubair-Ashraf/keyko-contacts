@@ -1,11 +1,13 @@
-import { Container, Box } from 'core-ui';
+import { List } from 'core-ui';
 
 const App = () => {
   return (
-    <Container>
-      <Box component='nav'>Navigation drawer</Box>
-      <Box component='main'>Main content</Box>
-    </Container>
+    <List hoverable>
+      <List.Item>
+        <List.ItemAvatar url='' />
+        <List.ItemText primary='Zubair Ashraf' secondary='Software Engineer' />
+      </List.Item>
+    </List>
   );
 };
 
