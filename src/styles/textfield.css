@@ -1,0 +1,56 @@
+.input {
+  /* width: 100%; */
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  background-color: var(--white);
+  border: 1px solid var(--grey);
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.input:focus {
+  color: var(--dark);
+  background-color: var(--white);
+  border-color: var(--primary);
+  outline: 0;
+  box-shadow: 0 0 0 0.125em rgb(72 95 199 / 25%);
+}
+
+.input.is-rounded {
+  border-radius: 999px;
+}
+
+.input.is-small {
+  padding: 0.275rem 0.75rem;
+  font-size: 0.75rem;
+}
+
+.input.is-medium {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+}
+
+.input.is-large {
+  padding: 0.475rem 0.75rem;
+  font-size: 1.5rem;
+}
+
+.input.is-primary {
+  border-color: var(--primary);
+}
+
+.input.is-danger {
+  border-color: var(--danger);
+}
+
+.input.is-warning {
+  border-color: var(--warning);
+}
+
+.input.is-info {
+  border-color: var(--info);
+}
+
+.input.is-success {
+  border-color: var(--success);
+}

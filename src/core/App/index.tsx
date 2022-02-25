@@ -1,35 +1,29 @@
-import { Button } from 'core-ui';
+import { TextField } from 'core-ui';
 import { Fragment } from 'react';
 
 const App = () => {
   return (
     <Fragment>
-      {/**Button colors */}
-      <Button color='primary'>Primary Button</Button>
-      <Button color='secondary'>Secondary Button</Button>
-      <Button color='info'>Info Button</Button>
-      <Button color='light'>Light Button</Button>
-      <Button color='warning'>Waring Button</Button>
-      <Button color='danger'>Danger Button</Button>
-      <Button color='dark'>Danger Button</Button>
-      {/**Fullwidth Button */}
-      <Button color='dark' fullwidth>
-        Full Width
-      </Button>
-      {/**Button Sizes */}
-      <Button color='dark' size='small'>
-        Small
-      </Button>
-      <Button color='dark' size='medium'>
-        Medium
-      </Button>
-      <Button color='dark' size='large'>
-        Large
-      </Button>
-      {/**Disabled button */}
-      <Button color='dark' disabled>
-        Disabled
-      </Button>
+      {/**TextField colors */}
+      <TextField color='primary' />
+      <TextField color='secondary' />
+      <TextField color='info' />
+      <TextField color='success' />
+      <TextField color='primary' />
+      <TextField color='warning' />
+      <TextField color='danger' />
+      {/**TextField sizes */}
+      <TextField size='small' />
+      <TextField size='medium' />
+      <TextField size='large' />
+      {/**Rounded TextField */}
+      <TextField rounded />
+      {/**TextField types */}
+      <TextField type='text' />
+      <TextField type='password' />
+      <TextField type='email' />
+      <TextField type='number' />
+      <TextField type='tel' />
     </Fragment>
   );
 };
