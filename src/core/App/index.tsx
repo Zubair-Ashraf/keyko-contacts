@@ -1,10 +1,21 @@
 import { Fragment } from 'react';
-import { TagInput } from 'core-ui';
+import { Table } from 'core-ui';
 
 const App = () => {
   return (
     <Fragment>
-      <TagInput />
+      {/**Table */}
+      <Table
+        header={['Name', 'Last Name', 'Email', 'Phone']}
+        data={[
+          {
+            name: 'Zubair',
+            lastName: 'Ashraf',
+            email: 'zubair@gmail.com',
+            phone: '9201901913',
+          },
+        ]}
+      />
     </Fragment>
   );
 };
