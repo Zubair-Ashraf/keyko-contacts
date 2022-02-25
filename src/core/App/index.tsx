@@ -1,23 +1,41 @@
 import { Fragment } from 'react';
-import { Icon } from 'core-ui';
+import { Chip, Icon } from 'core-ui';
 
 const App = () => {
   return (
     <Fragment>
-      {/**Icons */}
-      <Icon name='home' />
-      <Icon name='times' />
-      <Icon name='circle' />
-      {/**Icons color */}
-      <Icon name='home' color='primary' />
-      <Icon name='home' color='info' />
-      <Icon name='times' color='danger' />
-      <Icon name='angle-right' color='warning' />
-      <Icon name='arrow-left' color='dark' />
-      {/**Icons sizes */}
-      <Icon name='home' size='small' />
-      <Icon name='home' size='medium' />
-      <Icon name='home' size='large' />
+      {/**Chip colors */}
+      <Chip color='danger' rounded>
+        Danger
+      </Chip>
+      <Chip color='primary' rounded>
+        Primary
+      </Chip>
+      <Chip color='warning' rounded>
+        Warning
+      </Chip>
+      <Chip color='light' rounded>
+        Light
+      </Chip>
+      <Chip color='info' rounded>
+        Info
+      </Chip>
+      <Chip color='success' rounded>
+        Ssccess
+      </Chip>
+      <Chip color='secondary' rounded>
+        Secondary
+      </Chip>
+      {/**Chip sizes */}
+      <Chip color='primary' size='small' rounded>
+        Secondary
+      </Chip>
+      <Chip color='primary' size='medium' rounded>
+        Secondary
+      </Chip>
+      <Chip color='primary' size='large' rounded>
+        Secondary
+      </Chip>
     </Fragment>
   );
 };
