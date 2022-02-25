@@ -7,3 +7,4 @@ export * from './List';
 export * from './Typography';
 export * from './Icon';
 export * from './Chip';
+export * from './TagInput';
