@@ -1,0 +1,33 @@
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  background-color: var(--dark);
+  padding: 20px;
+}
+
+th {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+th,
+td {
+  width: 150px;
+  text-align: center;
+  border: 1px solid var(--light-info);
+  border-right: none;
+  border-left: none;
+  padding: 15px;
+  color: var(--info);
+  text-align: left;
+}
+
+th:last-child,
+td:last-child {
+  border-right: 1px solid var(--light-info);
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+  border-left: 1px solid var(--light-info);
+}

@@ -1,0 +1,15 @@
+.box.is-nav > .drawer > .box {
+  padding: 15px 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box.is-main {
+  background-color: var(--light);
+  padding: 2.5rem;
+}
+
+.box.is-main > .divider {
+  margin: 8px auto;
+}

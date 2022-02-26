@@ -1,5 +1,12 @@
-const App = () => {
-  return <h1>Hello React</h1>;
+import { BrowserRouter } from 'react-router-dom';
+import { Routes } from 'core/Routes';
+
+export const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  );
 };
 
 export default App;

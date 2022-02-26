@@ -1,0 +1,81 @@
+.typo.is-1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.typo.is-2 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.typo.is-3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.typo.is-4 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.typo.is-5 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.typo.is-6 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.has-text-white {
+  color: var(--white);
+}
+
+.has-text-black {
+  color: var(--black);
+}
+
+.has-text-light {
+  color: var(--light);
+}
+
+.has-text-dark {
+  color: var(--dark);
+}
+
+.has-text-primary {
+  color: var(--primary);
+}
+
+.has-text-info {
+  color: var(--info);
+}
+
+.has-text-success {
+  color: var(--success);
+}
+
+.has-text-warning {
+  color: var(--warning);
+}
+
+.has-text-danger {
+  color: var(--danger);
+}
+
+.typo.is-spaced {
+  margin-bottom: 1.5rem;
+}
+
+.typo.has-text-left {
+  text-align: left;
+}
+
+.typo.has-text-center {
+  text-align: center;
+}
+
+.typo.has-text-right {
+  text-align: right;
+}
