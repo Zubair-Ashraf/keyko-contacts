@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Container, Box, Drawer } from 'core-ui';
 import { ContactList } from './components/ContactsList';
+import { ContactForm } from './components/ContactForm';
 import { ManageContactsProps } from './props';
 
 export const ManageContacts: FC<ManageContactsProps> = (
@@ -13,7 +14,9 @@ export const ManageContacts: FC<ManageContactsProps> = (
           <ContactList contacts={[]} isLoading={false} />
         </Drawer>
       </Box>
-      <Box component='main'>Main content</Box>
+      <Box component='main'>
+        <ContactForm />
+      </Box>
     </Container>
   );
 };
