@@ -11,3 +11,4 @@ export * from './TagInput';
 export * from './Table';
 export * from './Drawer';
 export * from './Divider';
+export * from './Box';
