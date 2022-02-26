@@ -14,6 +14,8 @@ export interface TypographyProps {
     | 'warning'
     | 'danger';
 
+  textAlign: 'left' | 'center' | 'right';
+
   spaced?: boolean;
 
   children?: ReactNode;
