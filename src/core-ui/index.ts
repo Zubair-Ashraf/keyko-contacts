@@ -9,5 +9,3 @@ export * from './Icon';
 export * from './Chip';
 export * from './TagInput';
 export * from './Table';
-export * from './Drawer';
-export * from './Divider';
