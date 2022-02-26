@@ -2,13 +2,18 @@ import { FC } from 'react';
 import { Container, Box, Drawer } from 'core-ui';
 import { ContactList } from './components/ContactsList';
 import { ContactForm } from './components/ContactForm';
-import { useData } from './hooks';
+import { Contact } from 'interfaces/models';
+import { useData, useForm } from './hooks';
 import { ManageContactsProps } from './props';
+import { INITIAL_CONTACT } from './constants';
 
 export const ManageContacts: FC<ManageContactsProps> = (
   props: ManageContactsProps
 ) => {
   const { contacts, isLoading } = useData();
+
+  const { values, reset, handleValueChange } =
+    useForm<Contact>(INITIAL_CONTACT);
 
   return (
     <Container>
@@ -18,7 +23,7 @@ export const ManageContacts: FC<ManageContactsProps> = (
         </Drawer>
       </Box>
       <Box component='main'>
-        <ContactForm />
+        <ContactForm initialValues={values} onValueChange={handleValueChange} />
       </Box>
     </Container>
   );
