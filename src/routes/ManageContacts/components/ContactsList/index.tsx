@@ -1,14 +1,22 @@
 import { FC, Fragment } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { Divider, List, Typography, Icon, Button, Box } from 'core-ui';
 import { ContactsListProps } from './props';
 
 export const ContactList: FC<ContactsListProps> = (
   props: ContactsListProps
 ) => {
-  const { contacts, isLoading } = props;
+  const { contacts, isLoading, onReset } = props;
 
   const { id: contactId } = useParams<{ id: string | undefined }>();
+
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    onReset();
+
+    navigate('/contacts');
+  };
 
   if (isLoading)
     return (
@@ -23,7 +31,7 @@ export const ContactList: FC<ContactsListProps> = (
         <Typography size='5' color='white' textAlign='center'>
           Contacts ({contacts.length})
         </Typography>
-        <Button size='small'>
+        <Button size='small' onClick={handleNavigate}>
           <Icon name='plus-square' color='dark' />
         </Button>
       </Box>

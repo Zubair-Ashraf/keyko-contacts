@@ -9,7 +9,10 @@ export const useData = () => {
     data: contacts,
     isLoading,
     error,
+    refetch,
   } = useService<Contact[]>(service.contact.list);
+
+  let { onRequestService: onCreate } = useService(service.contact.create);
 
   useEffect(() => onFetchContacts(), []);
 
@@ -17,7 +20,11 @@ export const useData = () => {
     onLoadContacts();
   };
 
-  return { contacts, isLoading, error };
+  const onCreateContact = (data: any) => {
+    onCreate(data).then(() => refetch());
+  };
+
+  return { contacts, isLoading, error, onCreateContact };
 };
 
 export * from 'hooks';

@@ -13,7 +13,8 @@ import { ContactFormProps } from './props';
 import { INITIAL_CONTACT } from '../../constants';
 
 export const ContactForm: FC<ContactFormProps> = (props: ContactFormProps) => {
-  const { initialValues, onValueChange }: ContactFormProps = props;
+  const { initialValues, onValueChange, reset, onCreate }: ContactFormProps =
+    props;
 
   const [values, setValues] = useState<Contact>(initialValues);
 
@@ -27,7 +28,7 @@ export const ContactForm: FC<ContactFormProps> = (props: ContactFormProps) => {
     onValueChange(e);
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => onCreate();
 
   return (
     <Fragment>
