@@ -25,6 +25,11 @@ export const className: ClassNameFunc<TypographyProps> = (
         props[name] ? `is-${name}` : null
       )
     )
+    .concat(
+      ['textAlign'].map((name: string): string | null =>
+        props[name] ? `has-text-${props[name]}` : null
+      )
+    )
     .filter((name: string | null): boolean => !!name)
     .join(' ');
 

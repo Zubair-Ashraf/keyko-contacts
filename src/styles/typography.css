@@ -67,3 +67,15 @@
 .typo.is-spaced {
   margin-bottom: 1.5rem;
 }
+
+.typo.has-text-left {
+  text-align: left;
+}
+
+.typo.has-text-center {
+  text-align: center;
+}
+
+.typo.has-text-right {
+  text-align: right;
+}
