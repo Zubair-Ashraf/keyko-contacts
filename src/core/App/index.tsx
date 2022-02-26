@@ -1,22 +1,15 @@
-import { Fragment } from 'react';
-import { Table } from 'core-ui';
+import { Drawer, Box, Container } from 'core-ui';
 
 const App = () => {
   return (
-    <Fragment>
-      {/**Table */}
-      <Table
-        header={['Name', 'Last Name', 'Email', 'Phone']}
-        data={[
-          {
-            name: 'Zubair',
-            lastName: 'Ashraf',
-            email: 'zubair@gmail.com',
-            phone: '9201901913',
-          },
-        ]}
-      />
-    </Fragment>
+    <Container>
+      <Box component='nav'>
+        <Drawer open={true} color='dark'>
+          Menu list
+        </Drawer>
+      </Box>
+      <Box component='main'>Main content</Box>
+    </Container>
   );
 };
 
