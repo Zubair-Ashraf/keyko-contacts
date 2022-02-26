@@ -1,22 +1,12 @@
 import { Fragment } from 'react';
-import { Table } from 'core-ui';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from 'core/Routes';
 
 const App = () => {
   return (
-    <Fragment>
-      {/**Table */}
-      <Table
-        header={['Name', 'Last Name', 'Email', 'Phone']}
-        data={[
-          {
-            name: 'Zubair',
-            lastName: 'Ashraf',
-            email: 'zubair@gmail.com',
-            phone: '9201901913',
-          },
-        ]}
-      />
-    </Fragment>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   );
 };
 
