@@ -1,0 +1,39 @@
+.divider {
+  margin: 0;
+  padding: 0;
+  border-top: 0;
+  border-width: 0.2px;
+  border-color: var(--grey);
+}
+
+.divider.is-black {
+  border-color: var(--black);
+}
+
+.divider.is-light {
+  border-color: var(--secondary);
+}
+
+.divider.is-dark {
+  border-color: var(--dark);
+}
+
+.divider.is-info {
+  border-color: var(--info);
+}
+
+.divider.is-success {
+  border-color: var(--success);
+}
+
+.divider.is-warning {
+  border-color: var(--warning);
+}
+
+.divider.is-primary {
+  border-color: var(--primary);
+}
+
+.divider.is-danger {
+  border-color: var(--danger);
+}

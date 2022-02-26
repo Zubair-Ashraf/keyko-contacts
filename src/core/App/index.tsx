@@ -1,5 +1,23 @@
+import { Fragment } from 'react';
+import { Table } from 'core-ui';
+
 const App = () => {
-  return <h1>Hello React</h1>;
+  return (
+    <Fragment>
+      {/**Table */}
+      <Table
+        header={['Name', 'Last Name', 'Email', 'Phone']}
+        data={[
+          {
+            name: 'Zubair',
+            lastName: 'Ashraf',
+            email: 'zubair@gmail.com',
+            phone: '9201901913',
+          },
+        ]}
+      />
+    </Fragment>
+  );
 };
 
 export default App;

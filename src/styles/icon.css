@@ -1,0 +1,19 @@
+.icon.is-small {
+  font-size: 12px;
+}
+
+.icon.is-medium {
+  font-size: 18px;
+}
+
+.icon.is-large {
+  font-size: 22px;
+}
+
+.icon.is-right {
+  text-align: right;
+}
+
+.icon.is-left {
+  text-align: left;
+}
