@@ -1,4 +1,4 @@
-import { Fragment, FC, useState } from 'react';
+import { Fragment, FC, useState, useEffect } from 'react';
 import {
   Typography,
   Icon,
@@ -13,15 +13,22 @@ import { ContactFormProps } from './props';
 import { INITIAL_CONTACT } from '../../constants';
 
 export const ContactForm: FC<ContactFormProps> = (props: ContactFormProps) => {
-  const [values, setValues] = useState<Contact>(INITIAL_CONTACT);
+  const { initialValues, onValueChange, reset, onCreate }: ContactFormProps =
+    props;
+
+  const [values, setValues] = useState<Contact>(initialValues);
+
+  useEffect(() => setValues(initialValues), [initialValues]);
 
   const handleValueChange = (e) => {
     const { name, value } = e.target;
 
     setValues({ ...values, [name]: value });
+
+    onValueChange(e);
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => onCreate();
 
   return (
     <Fragment>
