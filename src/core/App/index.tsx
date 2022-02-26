@@ -1,15 +1,26 @@
-import { Drawer, Box, Container } from 'core-ui';
+import { Fragment } from 'react';
+import { Divider } from 'core-ui';
 
 const App = () => {
   return (
-    <Container>
-      <Box component='nav'>
-        <Drawer open={true} color='dark'>
-          Menu list
-        </Drawer>
-      </Box>
-      <Box component='main'>Main content</Box>
-    </Container>
+    <Fragment>
+      <Divider color='black' />
+      <br />
+      <Divider color='danger' />
+      <br />
+      <Divider color='warning' />
+      <br />
+      <Divider color='dark' />
+      <br />
+      <Divider color='info' />
+      <br />
+      <Divider color='primary' />
+      <br />
+      <Divider color='success' />
+      <br />
+      <Divider color='secondary' />
+      <br />
+    </Fragment>
   );
 };
 
