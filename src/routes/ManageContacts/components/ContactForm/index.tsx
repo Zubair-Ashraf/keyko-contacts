@@ -1,4 +1,5 @@
 import { Fragment, FC, useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import {
   Typography,
   Icon,
@@ -13,8 +14,15 @@ import { ContactFormProps } from './props';
 import { INITIAL_CONTACT } from '../../constants';
 
 export const ContactForm: FC<ContactFormProps> = (props: ContactFormProps) => {
-  const { initialValues, onValueChange, reset, onCreate }: ContactFormProps =
-    props;
+  const {
+    initialValues,
+    onValueChange,
+    reset,
+    onCreate,
+    onUpdate,
+  }: ContactFormProps = props;
+
+  const { id: contactId } = useParams<{ id: string | undefined }>();
 
   const [values, setValues] = useState<Contact>(initialValues);
 
@@ -28,7 +36,10 @@ export const ContactForm: FC<ContactFormProps> = (props: ContactFormProps) => {
     onValueChange(e);
   };
 
-  const handleSubmit = () => onCreate();
+  const handleSubmit = () => {
+    if (contactId) onUpdate(parseInt(contactId));
+    else onCreate();
+  };
 
   return (
     <Fragment>

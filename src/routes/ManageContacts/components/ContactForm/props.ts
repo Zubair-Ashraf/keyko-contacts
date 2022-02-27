@@ -8,4 +8,6 @@ export interface ContactFormProps {
   onValueChange: (e: any) => any;
 
   onCreate?: () => any;
+
+  onUpdate?: (id: number) => any;
 }

@@ -13,8 +13,14 @@ export const ManageContacts: FC<ManageContactsProps> = (
 ) => {
   const { id } = useParams<{ id: string | undefined }>();
 
-  const { contacts, contact, isLoading, onFetchContact, onCreateContact } =
-    useData();
+  const {
+    contacts,
+    contact,
+    isLoading,
+    onFetchContact,
+    onCreateContact,
+    onUpdateContact,
+  } = useData();
 
   const { values, reset, handleValueChange } =
     useForm<Contact>(INITIAL_CONTACT);
@@ -43,6 +49,7 @@ export const ManageContacts: FC<ManageContactsProps> = (
           initialValues={values}
           onValueChange={handleValueChange}
           onCreate={() => onCreateContact(values)}
+          onUpdate={(id) => onUpdateContact(id, values)}
         />
       </Box>
     </Container>
