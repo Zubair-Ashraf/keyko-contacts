@@ -19,8 +19,9 @@ Tabular view of contact's list:
 ## Installation and Setup Instructions
 1.  Make sure that you have Node.js and npm installed globally on your machine.
 2.  Clone this repo using `git clone https://github.com/Zubair-Ashraf/keyko-contacts.git`
-3.  Run `npm start` to see the app at `http://localhost:3000`. <br />
-4.  You can also view the app at this URL `https://keyko-contacts.web.app`
+3.  Run `npm install` to install the dependencies.
+4.  Run `npm start` to see the app at `http://localhost:3000`. <br />
+5.  You can also view the app at this URL `https://keyko-contacts.web.app`
 
 ## Folder Structure
 
