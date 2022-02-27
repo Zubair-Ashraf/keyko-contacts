@@ -10,4 +10,6 @@ export interface ContactFormProps {
   onCreate?: () => any;
 
   onUpdate?: (id: number) => any;
+
+  onDelete?: (id: number) => any;
 }

@@ -20,6 +20,7 @@ export const ManageContacts: FC<ManageContactsProps> = (
     onFetchContact,
     onCreateContact,
     onUpdateContact,
+    onDeleteContact,
   } = useData();
 
   const { values, reset, handleValueChange } =
@@ -47,9 +48,11 @@ export const ManageContacts: FC<ManageContactsProps> = (
       <Box component='main'>
         <ContactForm
           initialValues={values}
+          reset={reset}
           onValueChange={handleValueChange}
           onCreate={() => onCreateContact(values)}
           onUpdate={(id) => onUpdateContact(id, values)}
+          onDelete={(id) => onDeleteContact(id)}
         />
       </Box>
     </Container>

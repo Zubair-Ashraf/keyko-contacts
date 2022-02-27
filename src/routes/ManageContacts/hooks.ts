@@ -20,6 +20,8 @@ export const useData = () => {
 
   let { onRequestService: onUpdate } = useService(service.contact.update);
 
+  let { onRequestService: onDelete } = useService(service.contact.delete);
+
   useEffect(() => onFetchContacts(), []);
 
   const onFetchContacts = () => {
@@ -38,6 +40,10 @@ export const useData = () => {
     onUpdate({ id, ...data }).then(() => refetch());
   };
 
+  const onDeleteContact = (id: number) => {
+    onDelete(id).then(() => refetch());
+  };
+
   return {
     contacts,
     contact,
@@ -46,6 +52,7 @@ export const useData = () => {
     onFetchContact,
     onCreateContact,
     onUpdateContact,
+    onDeleteContact,
   };
 };
 

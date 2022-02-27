@@ -20,6 +20,7 @@ export const ContactForm: FC<ContactFormProps> = (props: ContactFormProps) => {
     reset,
     onCreate,
     onUpdate,
+    onDelete,
   }: ContactFormProps = props;
 
   const { id: contactId } = useParams<{ id: string | undefined }>();
@@ -34,6 +35,13 @@ export const ContactForm: FC<ContactFormProps> = (props: ContactFormProps) => {
     setValues({ ...values, [name]: value });
 
     onValueChange(e);
+  };
+
+  const handleDelete = () => {
+    if (window.confirm('Are you sure you want to delete this contact?')) {
+      onDelete(parseInt(contactId));
+      reset(INITIAL_CONTACT);
+    }
   };
 
   const handleSubmit = () => {
@@ -126,9 +134,16 @@ export const ContactForm: FC<ContactFormProps> = (props: ContactFormProps) => {
         <Grid item>
           <label>&nbsp;</label>
           <Button color='dark' type='button' onClick={handleSubmit}>
-            <Icon name={'angle-double-right'} />
-            &nbsp; Submit
+            <Icon name={contactId ? 'pencil' : 'angle-double-right'} />
+            &nbsp; {!contactId ? 'Submit' : 'Update'}
           </Button>
+          &nbsp;
+          {contactId && (
+            <Button color='danger' type='button' onClick={handleDelete}>
+              <Icon name={'trash'} />
+              &nbsp; Delete
+            </Button>
+          )}
         </Grid>
       </Grid>
     </Fragment>
