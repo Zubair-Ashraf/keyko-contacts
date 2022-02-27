@@ -1,7 +1,9 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Container, Box, Drawer } from 'core-ui';
 import { ContactList } from './components/ContactsList';
 import { ContactForm } from './components/ContactForm';
+import { ContactsTable } from './components/ContactsTable';
 import { Contact } from 'interfaces/models';
 import { useData, useForm } from './hooks';
 import { ManageContactsProps } from './props';
@@ -10,10 +12,26 @@ import { INITIAL_CONTACT } from './constants';
 export const ManageContacts: FC<ManageContactsProps> = (
   props: ManageContactsProps
 ) => {
-  const { contacts, isLoading, onCreateContact } = useData();
+  const { id } = useParams<{ id: string | undefined }>();
+
+  const {
+    contacts,
+    contact,
+    isLoading,
+    onFetchContact,
+    onCreateContact,
+    onUpdateContact,
+    onDeleteContact,
+  } = useData();
 
   const { values, reset, handleValueChange } =
     useForm<Contact>(INITIAL_CONTACT);
+
+  useEffect(() => {
+    onFetchContact(parseInt(id));
+  }, [id]);
+
+  useEffect(() => contact && reset(contact), [contact]);
 
   const handleReset = () => reset(INITIAL_CONTACT);
 
@@ -31,8 +49,11 @@ export const ManageContacts: FC<ManageContactsProps> = (
       <Box component='main'>
         <ContactForm
           initialValues={values}
+          reset={reset}
           onValueChange={handleValueChange}
           onCreate={() => onCreateContact(values)}
+          onUpdate={(id) => onUpdateContact(id, values)}
+          onDelete={(id) => onDeleteContact(id)}
         />
       </Box>
     </Container>
@@ -40,3 +61,5 @@ export const ManageContacts: FC<ManageContactsProps> = (
 };
 
 export default ManageContacts;
+
+export { ContactsTable };

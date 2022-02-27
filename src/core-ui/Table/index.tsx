@@ -8,28 +8,32 @@ export const Table: FC<TableProps> = (props: TableProps) => {
 
   return (
     <table className={className()}>
-      <tr>
-        {header.map((name) => (
-          <th>{name}</th>
-        ))}
-      </tr>
-      {data?.map((data) => (
+      <thead>
         <tr>
-          {Object.values(data).map((name) =>
-            typeof name == 'object' ? (
-              <td>
-                {Object.values(name).map((name) => (
-                  <>
-                    <Chip color='secondary'>{name}</Chip> &nbsp;
-                  </>
-                ))}
-              </td>
-            ) : (
-              <td>{name}</td>
-            )
-          )}
+          {header.map((name) => (
+            <th>{name}</th>
+          ))}
         </tr>
-      ))}
+      </thead>
+      <tbody>
+        {data?.map((data) => (
+          <tr>
+            {Object.values(data).map((name) =>
+              typeof name == 'object' ? (
+                <td>
+                  {Object.values(name).map((name) => (
+                    <>
+                      <Chip color='secondary'>{name}</Chip> &nbsp;
+                    </>
+                  ))}
+                </td>
+              ) : (
+                <td>{name}</td>
+              )
+            )}
+          </tr>
+        ))}
+      </tbody>
     </table>
   );
 };
