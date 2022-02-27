@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Container, Box, Drawer } from 'core-ui';
 import { ContactList } from './components/ContactsList';
 import { ContactForm } from './components/ContactForm';
+import { ContactsTable } from './components/ContactsTable';
 import { Contact } from 'interfaces/models';
 import { useData, useForm } from './hooks';
 import { ManageContactsProps } from './props';
@@ -60,3 +61,5 @@ export const ManageContacts: FC<ManageContactsProps> = (
 };
 
 export default ManageContacts;
+
+export { ContactsTable };

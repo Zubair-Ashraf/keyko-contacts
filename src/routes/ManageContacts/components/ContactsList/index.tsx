@@ -31,9 +31,17 @@ export const ContactList: FC<ContactsListProps> = (
         <Typography size='5' color='white' textAlign='center'>
           Contacts ({contacts.length})
         </Typography>
-        <Button size='small' onClick={handleNavigate}>
-          <Icon name='plus-square' color='dark' />
-        </Button>
+        <Box>
+          <Button size='small'>
+            <Link to='/contacts/view2'>
+              <Icon name='table' color='dark' />
+            </Link>
+          </Button>
+          &nbsp;
+          <Button size='small' onClick={handleNavigate}>
+            <Icon name='plus-square' color='dark' />
+          </Button>
+        </Box>
       </Box>
       <Divider color='light' />
       {contacts.length === 0 ? (
