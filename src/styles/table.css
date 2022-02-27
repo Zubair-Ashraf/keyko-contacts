@@ -31,3 +31,7 @@ th:nth-child(1),
 td:nth-child(1) {
   border-left: 1px solid var(--light-info);
 }
+
+tbody > tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
