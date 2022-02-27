@@ -52,8 +52,8 @@ export const ContactForm: FC<ContactFormProps> = (props: ContactFormProps) => {
   return (
     <Fragment>
       <Typography size='5' textAlign='left'>
-        <Icon name={'plus-square'} />
-        &nbsp; Add New Contact
+        <Icon name={contactId ? 'pencil' : 'plus-square'} />
+        &nbsp; {contactId ? 'Modify Contact' : 'Add New Contact'}
       </Typography>
       <Divider />
       <Grid container>
